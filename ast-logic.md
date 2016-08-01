@@ -76,3 +76,22 @@ All functions are wrappers of `_ast_log ()` except itself.
 - `ast_warn_noask ()`
 - `ast_error ()`
 - `ast_success ()`
+
+## Calling Tree
+
+- `main`
+  - `ast_cli_show` or `ast_gui_show`
+    - **(Multiple times)** `ast_verify_image`
+    - `ast_run_deployment`
+      - `ast_check_system_requirements`
+      - `ast_backup`
+        - `ast_backup_firmware`
+        - `ast_backup_windows_loader`
+        - `ast_backup_partition_table`
+      - `ast_install_windows_loader` or `ast_install_mbr` or `ast_install_uefi`
+      - `ast_install_files_system_drive` (and `ast_install_files_esp` if on UEFI platform)
+      - `ast_install_generate_ast_info`
+    - `ast_run_startup`
+      - `ast_startup_read_info`
+      - `ast_restore_system`
+      - **(If needed)** `ast_restore_mbr` or/and `ast_restore_uefi`
