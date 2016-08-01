@@ -23,7 +23,7 @@ AST has 2 modes: **Deploy** and **Startup**. **Deployment** is the procedure to 
 ### `<verify.h>`
 
 - `ast_verify_image ()`
-  - `_ast_verify_image_header ()`
+  - `ast_verify_image_header ()`
   - `ast_verify_md5sum ()`
   - `ast_verify_sha1sum ()`
   - `ast_verify_sha256sum ()`
