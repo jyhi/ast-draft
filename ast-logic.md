@@ -11,7 +11,11 @@
 
 - `ast_gui_show ()`
 
+**NOTE:** GUI will invoke verification related functions from time to time. See `<verify.h>`.
+
 ### `<run.h>`
+
+AST has 2 modes: **Deploy** and **Startup**. **Deployment** is the procedure to install boot loader, and **Start-up** is the procedure to clean up the system.
 
 - `ast_run_deployment ()`
 - `ast_run_startup ()`
@@ -26,6 +30,8 @@
   - `ast_verify_sha512sum ()`
 
 ### `<sysinfo.h>`
+
+Do we need this?
 
 - `ast_check_system_requirements ()` (**TBD**)
 
@@ -58,6 +64,8 @@
 - `ast_restore_uefi ()`
 
 ### `<utils.h>`
+
+All functions are wrappers of `_ast_log ()` except itself.
 
 - `_ast_log ()`
   - `_ast_log_to_console ()` / `_ast_log_to_gui_memo ()`
