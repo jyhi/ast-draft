@@ -94,6 +94,23 @@ All functions are wrappers of `_ast_log ()` except itself.
 - `ast_error ()`
 - `ast_success ()`
 
+#### `<guid.h>`
+
+```c
+// A GUID should be defined as:
+#define EFI_GLOBAL_GUID {0x8be4df64, 0x93ca, 0x11d2, \
+    {0xaa, 0x0d, 0x00, 0xe0, 0x98, 0x03, 0x2b, 0x82}}
+
+typedef struct _GUID {
+    uint32_t f1;
+    uint16_t f2;
+    uint16_t f3;
+    char     f4[8];
+} GUID;
+```
+
+- `ast_guid_tostring ()`
+
 ## Calling Tree
 
 - `main`
