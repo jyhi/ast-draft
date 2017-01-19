@@ -41,7 +41,9 @@ AST has 2 modes: **Deploy** and **Startup**. **Deployment** is the procedure to 
 
 Do we need this?
 
-- `ast_check_system_requirements ()` (**TBD**)
+- ~~`ast_check_system_requirements ()` (**TBD**)~~
+- `ast_check_secure_boot ()`
+
 ### `backup/`
 
 #### `<backup.h>`
