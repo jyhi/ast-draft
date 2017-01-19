@@ -1,26 +1,32 @@
 # AST's Startup Toolkit 0.3 Operating Logic
 
-## All Function List
+## All Function List (`/src/`)
 
-### `<cli.h>`
+### `interface/`
+
+#### `<cli.h>`
 
 - `ast_cli_show ()` (**TBD**)
 - `ast_cli_parse_arguments ()`
 
-### `<gui.h>`
+#### `<gui.h>`
 
 - `ast_gui_show ()`
 
 **NOTE:** GUI will invoke verification related functions from time to time. See `<verify.h>`.
 
-### `<run.h>`
+### `logic/`
+
+#### `<run.h>`
 
 AST has 2 modes: **Deploy** and **Startup**. **Deployment** is the procedure to install boot loader, and **Start-up** is the procedure to clean up the system.
 
 - `ast_run_deployment ()`
 - `ast_run_startup ()`
 
-### `<verify.h>`
+### `verify/`
+
+#### `<verify.h>`
 
 - `ast_verify_image ()`
   - `ast_verify_image_header ()`
@@ -29,13 +35,16 @@ AST has 2 modes: **Deploy** and **Startup**. **Deployment** is the procedure to 
   - `ast_verify_sha256sum ()`
   - `ast_verify_sha512sum ()`
 
-### `<sysinfo.h>`
+### `sysinfo/`
+
+#### `<sysinfo.h>`
 
 Do we need this?
 
 - `ast_check_system_requirements ()` (**TBD**)
+### `backup/`
 
-### `<backup.h>`
+#### `<backup.h>`
 
 - `ast_backup ()`
   - `ast_backup_partition_table ()`
@@ -47,7 +56,9 @@ Do we need this?
   - `ast_backup_firmware ()`
     - `ast_backup_uefi ()`
 
-### `<install.h>`
+### `install/`
+
+#### `<install.h>`
 
 - `ast_install_windows_loader ()`
 - `ast_install_mbr ()`
@@ -56,14 +67,18 @@ Do we need this?
 - `ast_install_files_esp ()`
 - `ast_install_generate_ast_info ()`
 
-### `<startup.h>`
+### `startup/`
+
+#### `<startup.h>`
 
 - `ast_startup_read_info ()`
 - `ast_restore_system ()`
 - `ast_restore_mbr ()`
 - `ast_restore_uefi ()`
 
-### `<utils.h>`
+### `utils/`
+
+#### `<output.h>`
 
 All functions are wrappers of `_ast_log ()` except itself.
 
